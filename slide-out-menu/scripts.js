@@ -10,4 +10,4 @@ console.log("ready");
     $(document).on("touchend click", '.wpslm-close', function() {
       $('.wpslm').removeClass('open');
     });
-})( jQuery );
+})(jQuery);
