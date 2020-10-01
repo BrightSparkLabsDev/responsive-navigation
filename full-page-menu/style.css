@@ -1,0 +1,28 @@
+.wpfpm {
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+    top: 66px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 66px);
+    display: none;
+    border-top: 1px solid #eee;
+    overflow: auto;
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    background-color: rgba(255,255,255,.9);
+    display:none;
+}
+.wpfpm.open {
+    opacity:1;
+    display:block;
+}
+.header-bar {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.header-bar.active {
+    /* background:rgba(0,0,0,0.7); */
+}
