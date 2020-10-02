@@ -28,31 +28,31 @@
 }
 .wpslm-left.open,
 .wpslm-right.open {
-  transform:translateX(0);
+    transform:translateX(0);
 }
 .wpslm-right.open {
-  opacity:1;
+    opacity:1;
 }
 .wpslm-close {
-  position: absolute;
-  top: 40px;
-  right: 28.5vw;
-  z-index: 9999999;
-  background: #CBE0FF;
-  padding: 12px 17px;
-  border-radius: 45px;
-  line-height: 1;
-  display:none;
-  opacity:0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  font-weight:bold;
-  cursor: pointer;
-  color:#fff;
+    position: absolute;
+    top: 40px;
+    right: 28.5vw;
+    z-index: 9999999;
+    background: #CBE0FF;
+    padding: 12px 17px;
+    border-radius: 45px;
+    line-height: 1;
+    display:none;
+    opacity:0;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    font-weight:bold;
+    cursor: pointer;
+    color:#fff;
 }
 .wpslm-right.open + .wpslm-close {
-  display:block;
-  opacity:1;
+    display:block;
+    opacity:1;
 }
 @media(max-width:768px) {
   .wpslm-left {
@@ -71,7 +71,7 @@
       top:70vh;
   }
   .wpslm-close {
-    top: 60px;
-    right: 20px;
+      top: 60px;
+      right: 20px;
   }
 }
