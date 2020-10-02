@@ -89,6 +89,14 @@ class SlidePageMenu {
 			'slide-page-menu-admin', // page
 			'slide_page_menu_setting_section' // section
 		);
+
+		add_settings_field(
+			'custom_trigger', // id
+			'Custom Trigger', // title
+			array( $this, 'custom_trigger_callback' ), // callback
+			'slide-page-menu-admin', // page
+			'slide_page_menu_setting_section' // section
+		);
 	}
 
 	public function slide_page_menu_sanitize($input) {
@@ -111,6 +119,10 @@ class SlidePageMenu {
 
 		if ( isset( $input['icon_background_0'] ) ) {
 			$sanitary_values['icon_background_0'] = sanitize_text_field( $input['icon_background_0'] );
+		}
+
+		if ( isset( $input['custom_trigger'] ) ) {
+			$sanitary_values['custom_trigger'] = sanitize_text_field( $input['custom_trigger'] );
 		}
 
 		return $sanitary_values;
@@ -152,6 +164,13 @@ class SlidePageMenu {
 		printf(
 			'<input class="regular-text" type="text" name="slide_page_menu_option_name[icon_background_0]" id="icon_background_0" value="%s">',
 			isset( $this->slide_page_menu_options['icon_background_0'] ) ? esc_attr( $this->slide_page_menu_options['icon_background_0']) : ''
+		);
+	}
+
+	public function custom_trigger_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="slide_page_menu_option_name[custom_trigger]" id="custom_trigger" value="%s">',
+			isset( $this->slide_page_menu_options['custom_trigger'] ) ? esc_attr( $this->slide_page_menu_options['custom_trigger']) : ''
 		);
 	}
 
