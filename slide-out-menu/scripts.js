@@ -1,5 +1,4 @@
 (function($) {
-console.log("ready");
     $(document).on("touchend click", '.wpslm-trigger', function() {
       $('.wpslm').addClass('open');
     });

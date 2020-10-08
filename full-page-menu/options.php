@@ -89,6 +89,14 @@ class FullPageMenu {
 			'full-page-menu-admin', // page
 			'full_page_menu_setting_section' // section
 		);
+
+		add_settings_field(
+			'custom_trigger', // id
+			'Custom Trigger', // title
+			array( $this, 'custom_trigger_callback' ), // callback
+			'full-page-menu-admin', // page
+			'full_page_menu_setting_section' // section
+		);
 	}
 
 	public function full_page_menu_sanitize($input) {
@@ -111,6 +119,10 @@ class FullPageMenu {
 
 		if ( isset( $input['banner_background_3'] ) ) {
 			$sanitary_values['banner_background_3'] = sanitize_text_field( $input['banner_background_3'] );
+		}
+
+		if ( isset( $input['custom_trigger'] ) ) {
+			$sanitary_values['custom_trigger'] = sanitize_text_field( $input['custom_trigger'] );
 		}
 
 		return $sanitary_values;
@@ -152,6 +164,13 @@ class FullPageMenu {
 		printf(
 			'<input class="regular-text" type="text" name="full_page_menu_option_name[banner_background_3]" id="banner_background_3" value="%s">',
 			isset( $this->full_page_menu_options['banner_background_3'] ) ? esc_attr( $this->full_page_menu_options['banner_background_3']) : ''
+		);
+	}
+
+	public function custom_trigger_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="full_page_menu_option_name[custom_trigger]" id="custom_trigger" value="%s">',
+			isset( $this->full_page_menu_options['custom_trigger'] ) ? esc_attr( $this->full_page_menu_options['custom_trigger']) : ''
 		);
 	}
 
